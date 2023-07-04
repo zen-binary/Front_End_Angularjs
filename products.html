@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+   
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://bbcosplay.com/templates/images/appicon/16x16.png" class="favicon">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.min.js"></script>
+    <script src="js/angular.js"></script>
+
+</head>
+<body ng-app="myApp">
+  <nav class="navbar navbar-expand-lg nav">
+    <div class="container">
+
+        <div class="navbar-brand"></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""><i class="fa-sharp fa-solid fa-bars"></i></span>
+          
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="#!/home">Trang Chủ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!/products">Sản Phẩm</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Khuyến Mãi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Thể Loại</a>
+                
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Các Nước</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Trẻ Em</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Nhân Vật</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cổ Trang</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Phụ Kiện</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Đạo Cụ</a>
+              </li>
+          </ul>
+          
+        </div>
+    </div>
+  </nav>
+    <div class="main" ng-controller="productsController">
+      <!-- content -->
+        <div class="container products">
+            <div class="row">
+                <div class="products_categorys col-sm-2">
+                    <div class="products_categorys-tile">
+                        <a href=""><i class="fa-solid fa-list"></i> Tất Cả Danh Mục</a>
+                    </div>
+                    <div class="products_categorys-list">
+                        <ul class="categorys-list">
+                          <!-- class="activeCategory"  -->
+                            <li class="list" ><a href="" ng-click="clickFillterProductAll()"><i class="fa-solid fa-caret-right"></i> Tất cả sản phẩm</a></li>
+                            <li class="list" ng-repeat="Category in listCategory"><a href="" ng-click="clickFillterProduct(Category.id)"><i class="fa-solid fa-caret-right" ></i> {{Category.name}} </a></li>
+     
+                        </ul>
+                    </div>
+
+                    <div class="products_categorys-tile">
+                      <a href=""><i class="fa-solid fa-filter"></i> BỘ LỌC TÌM KIẾM</a>
+                  </div>
+                  <div class="products_categorys-list">
+                    
+
+                </div>
+                </div>
+    
+                <div class="products_box col-sm-10">
+                    <div class="products_box-sort">
+                        
+                        <h5 class="box_sort-tile">
+                            Sắp Xếp Theo
+                        </h5>
+                        <div class="box_sort">
+                            <button class="btn" ng-click="clickFillterProductNew()">Mới Nhất</button>
+                            <button class="btn" ng-click="clickFillterProductPay()">Bán Chạy</button>
+                            <div class="">
+                                <select class="form-select" id="validationCustom04" ng-model="checkFillProPrice" required ng-change="clickFillterProductPrice()">
+                                  <option selected value="">Giá</option>
+                                  <option value="false">Giá: Thấp đến Cao</option>
+                                  <option value="true">Giá: Cao đến Thấp</option>
+                                </select>
+                               
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="box_sp col-lg-3 col-md-3 col-sm-4 col-xs-6" ng-repeat="product in listProducts | filter: fillterProduct | orderBy: oderProductNew  | orderBy: oderProductPay | orderBy: oderProductPrice">
+                          <a ng-href="#!/products/{{product.id}}">
+                            <div class="box_sp-img">
+                              <img ng-src="images/sp/{{product.img[0]}}" alt="" style="height: 400px;">
+                            </div>
+                            <div class="box_sp-id">Mã: {{product.id}}</div>
+                            <h5 class="box_sp-tile">
+                              {{product.name}}
+                            </h5>
+                            
+                            <div class="box_sp-sell">
+                              <div  class="box_sp-gia">Giá: {{product.price}} <span class="text-decoration-underline">đ</span></div> 
+                                <div class="box_sp-banduoc">Đã bán: {{product.sold}}</div>
+                            </div>
+                          
+                          </a>
+                        </div>
+                          
+                    </div>
+                    <div class="page">
+                      <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+    
+                </div>
+                
+            </div>
+
+        </div>
+
+
+       
+
+    </div>
+
+    <footer class="footer">
+      <div class="footer_box1">
+        <div class="container">
+          <div class="row">
+            <div class="footer_box col-md-6">
+              <div class="footer_box-logo">
+                    <img src="images/conbum.png" alt="">
+                    <b>BB</b>Cosplay
+              </div>
+              <div class="footer_box-tile1">
+                Chuyên bán và cho thuê trang phục hoá trang - biểu diễn
+              </div>
+              <div class="footer_box-tile2 row">
+                <div class="col-md-4"><p>5,478</p> Sản phẩm</div>
+                <div class="col-md-4"><p>2,521</p> Khách hàng</div>
+                <div class="col-md-4"><p>100</p> Nhà cung cấp</div>
+              </div>
+              <div class="footer_box-icon">
+                <div class="icon">
+                  <i class="fa-brands fa-square-facebook"></i>
+                </div>
+                <div class="icon">
+                  <i class="fa-brands fa-youtube"></i>
+                </div>
+                <div class="icon">
+                  <i class="fa-brands fa-tiktok"></i>
+                </div>
+                <div class="icon">
+                  <i class="fa-brands fa-square-pinterest"></i>
+                </div>
+                <div class="icon">
+                  <i class="fa-brands fa-square-twitter"></i>
+                </div>
+                
+              </div>
+
+            </div>
+            <div class="footer_box col-md-3">
+              <div>Categories</div>
+              <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Quy Định Thuê</a></li>
+                <li><a href="#">Quy định đổi trả</a></li>
+                <li><a href="#">Chính sách riêng tư</a></li>
+                <li><a href="#">Liên hệ</a></li>
+              </ul>
+            </div>
+
+            <div class="footer_box col-md-3">
+              <div>Categories</div>
+              <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Quy Định Thuê</a></li>
+                <li><a href="#">Quy định đổi trả</a></li>
+                <li><a href="#">Chính sách riêng tư</a></li>
+                <li><a href="#">Liên hệ</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer_box2">
+        <div class="container">
+          <div class="row">
+            <div class="footer_box col-md-3">
+                <div class="footer_box-diachi">
+                  <h5><i class="fa-solid fa-location-dot"></i> Địa chỉ</h5>
+                  <p>118/19 Bạch Đằng, P.24, Q. Bình Thạnh, TP.HCM</p>
+                </div>
+                <div class="footer_box-hotline">
+                    <h5> Hotline/zalo:</h5>
+                    <p>0947.927.017</p>
+                </div>
+            </div>
+
+            <div class="footer_box col-md-2">
+              <div class="footer_box-time">
+                <h5><i class="fa-regular fa-clock"></i> Giờ làm việc</h5>
+                <p>Thứ 2 - Thứ 7: 8:30 - 20:00</p>
+                <p>Chủ Nhật: 10:00 - 18:00</p>
+                <p>Lễ + Tết: nghỉ</p>
+              </div>
+            </div>
+
+            <div class="footer_box col-md-4">
+              <div class="footer_box-map">
+                <h5><i class="fa-solid fa-map-location-dot"></i> Hướng dẫn đường đi</h5>
+                <p>Nếu đi từ Hàng Xanh (Bạch Đằng), qua ngã tư Bạch Đằng - Đinh Bộ Lĩnh 100m gặp hẻm 118. Vào hẻm gặp đường cắt ngang đầu tiên (ngã tư) rẻ trái -> tìm số nhà bên trái 118/19 (cổng màu hồng).</p>
+                <p>Hẻm 118 là hẻm xe hơi. Đi xe hơi, có thể đậu đầu hẻm, cần một người ở lại trông xe. Đi xe máy, chạy vào bình thường.</p>
+                <p>Nếu đi hướng Tân Bình, Phú Nhuận, Chợ Bà Chiểu. Chạy thẳng Bạch Đằng, gặp ngã tư Bặch Đằng - Đinh Bộ Lĩnh , vòng lại (hình chữ U), đi tiếp 200m, tìm hẻm 118</p>
+
+              </div>
+            </div>
+
+            <div class="footer_box col-md-3">
+              <div class="footer_box-bank">
+
+                <h5><i class="fa-solid fa-building-columns"></i> Tài khoản ngân hàng:</h5>
+                <p>Chủ tài khoản:</p>
+                <p>Quý khách chuyển nhanh (Napas 24/7) để tiền đi nhanh, có tên người nhận, và không cần chọn chi nhánh ngân hàng</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <script src="js/products.js"></script>
+  </body>
+</html>

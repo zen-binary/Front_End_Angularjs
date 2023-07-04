@@ -1,0 +1,714 @@
+{
+  "users": [
+    {
+      "name": "Lại Văn Chiến",
+      "email": "admin@admin.com",
+      "password": "123",
+      "birthday": "2001-10-16T01:00:00.000Z",
+      "avatar": "avatar-gau-cute.jpg",
+      "gender": "true",
+      "address": "Ha noi1",
+      "role": 0,
+      "id": 1
+    },
+    {
+      "name": "chienaa",
+      "email": "chienlai2k3@gmail.com",
+      "password": "123",
+      "birthday": "2023-06-24T17:00:00.000Z",
+      "avatar": "avatar-gau-cute.jpg",
+      "address": "Georgia",
+      "gender": "false",
+      "role": 1,
+      "id": 2
+    },
+    {
+      "name": "Lại Văn C2",
+      "email": "emvipvip12@gmail.com",
+      "password": "123",
+      "birthday": "2023-06-28T17:00:00.000Z",
+      "avatar": "icon.png",
+      "gender": "true",
+      "address": "123",
+      "role": 1,
+      "id": 3
+    },
+    {
+      "name": "Test 123",
+      "email": "test@gmail.com",
+      "password": "123",
+      "birthday": "2023-06-29T17:00:00.000Z",
+      "avatar": "icon.png",
+      "role": 1,
+      "gender": "true",
+      "address": "trest",
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "name": "Hán Phục",
+      "description": "mô tả",
+      "id": 1
+    },
+    {
+      "name": "JK",
+      "description": "Anime",
+      "id": 2
+    },
+    {
+      "name": "Siêu Nhân",
+      "description": "Anime",
+      "id": 3
+    }
+  ],
+  "products": [
+    {
+      "name": "Hanbok Hàn Quốc Áo Trắng Váy Hồng Phấn",
+      "img": [
+        "han-bok-ao-hong-kem-vay-vang-1.jpg"
+      ],
+      "category": "2",
+      "quantity": 930,
+      "price": 1000,
+      "sold": 69,
+      "description": "mô tả",
+      "status": 0,
+      "dateCreate": "01/01/1990",
+      "id": 1
+    },
+    {
+      "name": "Hán Phục Hoa Vũ Xích Dương",
+      "img": [
+        "298022547_444512701023555_1991600463720128622_n1.jpg",
+        "hanbok-han-quoc-theu-hoa-3.jpg"
+      ],
+      "category": "3",
+      "quantity": 932,
+      "price": "1222",
+      "sold": 3,
+      "description": "mô tả",
+      "status": 0,
+      "dateCreate": "2023-06-04T11:44:20.091Z",
+      "id": 2
+    },
+    {
+      "name": "Lolita Cosplay",
+      "img": [
+        "il_794xN.3135636504_qfvl.jpg",
+        "il_794xN.3183353517_8o3j.jpg",
+        "il_794xN.3201329630_dgf0.jpg",
+        "il_1140xN.3642892018_mib8.jpg",
+        "il_1140xN.3690502081_8dsb.jpg"
+      ],
+      "category": "2",
+      "quantity": 26,
+      "price": "1000",
+      "sold": 100,
+      "description": "123",
+      "status": 0,
+      "dateCreate": "2023-06-09T21:44:32.515Z",
+      "id": 4
+    },
+    {
+      "name": "Yae Miko Genshin Impact Cosplay",
+      "img": [
+        "il_1140xN.3690502081_8dsb.jpg"
+      ],
+      "category": "3",
+      "quantity": 989,
+      "price": "1000",
+      "sold": 10,
+      "description": "mô tả",
+      "status": 0,
+      "dateCreate": "2023-06-09T21:45:30.453Z",
+      "id": 5
+    },
+    {
+      "name": "Royal Maid Dress Costume",
+      "img": [
+        "il_794xN.3135629412_jru4.jpg",
+        "il_794xN.3135629420_7dmz.jpg",
+        "il_794xN.3201329630_dgf0.jpg"
+      ],
+      "category": "1",
+      "quantity": 215,
+      "price": "1000",
+      "sold": 106,
+      "description": "mô tả",
+      "status": 0,
+      "dateCreate": "2023-06-12T21:10:56.460Z",
+      "id": 6
+    },
+    {
+      "name": "Royal Maid Dress Costume",
+      "img": [
+        "il_794xN.2987072194_trf9.jpg",
+        "il_794xN.2987072210_70ko.jpg"
+      ],
+      "category": "2",
+      "quantity": 94,
+      "price": "1231",
+      "sold": 5,
+      "description": "mô tả",
+      "status": 22,
+      "dateCreate": "2023-06-12T21:11:43.450Z",
+      "id": 7
+    },
+    {
+      "name": "Royal Maid Dress Costume",
+      "img": [
+        "il_794xN.3135636504_qfvl.jpg",
+        "il_794xN.3183353517_8o3j.jpg",
+        "il_794xN.3201329630_dgf0 - Copy.jpg",
+        "il_794xN.3201329630_dgf0.jpg"
+      ],
+      "category": "2",
+      "quantity": 999,
+      "price": "1111",
+      "sold": 0,
+      "description": "mô tả",
+      "status": 0,
+      "dateCreate": "2023-06-12T23:08:46.054Z",
+      "id": 8
+    },
+    {
+      "name": "Army Style Goth Lolita",
+      "img": [
+        "il_1140xN.3118112617_rkal.jpg",
+        "il_1140xN.3118112629_4bm5.jpg"
+      ],
+      "category": "1",
+      "quantity": 123123,
+      "price": "1000",
+      "sold": 0,
+      "description": "mô tả",
+      "status": 0,
+      "dateCreate": "2023-06-13T07:30:50.235Z",
+      "id": 9
+    },
+    {
+      "name": "Royal Maid Dress Costume",
+      "img": [
+        "il_794xN.3090850359_tpnh.jpg"
+      ],
+      "category": "2",
+      "quantity": 110,
+      "price": "111",
+      "sold": 1,
+      "description": "mô tả",
+      "status": 0,
+      "dateCreate": "2023-06-13T07:33:46.901Z",
+      "id": 10
+    }
+  ],
+  "bill": [
+    {
+      "idUser": 1,
+      "money": 41548,
+      "dateCreate": "2023-06-12T15:16:11.285Z",
+      "datePay": "2023-06-12T19:27:08.933Z",
+      "status": 1,
+      "id": 1
+    },
+    {
+      "idUser": 2,
+      "money": 17000,
+      "dateCreate": "2023-06-12T18:30:58.386Z",
+      "datePay": "2023-06-12T22:52:39.866Z",
+      "status": 1,
+      "id": 2
+    },
+    {
+      "idUser": 1,
+      "money": 5000,
+      "dateCreate": "2023-06-12T19:27:11.411Z",
+      "datePay": "2023-06-12T20:41:52.993Z",
+      "status": 1,
+      "id": 3
+    },
+    {
+      "idUser": 1,
+      "money": 3000,
+      "dateCreate": "2023-06-12T20:41:53.258Z",
+      "datePay": "2023-06-13T07:35:34.275Z",
+      "status": 1,
+      "id": 4
+    },
+    {
+      "idUser": 3,
+      "money": 0,
+      "dateCreate": "2023-06-12T21:56:13.628Z",
+      "datePay": "01/01/1990",
+      "status": 0,
+      "id": 5
+    },
+    {
+      "idUser": 2,
+      "money": 4000,
+      "dateCreate": "2023-06-12T22:52:50.788Z",
+      "datePay": "2023-06-12T22:53:27.633Z",
+      "status": 1,
+      "id": 6
+    },
+    {
+      "idUser": 2,
+      "money": 2444,
+      "dateCreate": "2023-06-12T22:53:58.244Z",
+      "datePay": "2023-06-12T22:54:48.594Z",
+      "status": 1,
+      "id": 7
+    },
+    {
+      "idUser": 2,
+      "money": 9776,
+      "dateCreate": "2023-06-12T22:55:00.953Z",
+      "datePay": "2023-06-12T22:55:11.666Z",
+      "status": 1,
+      "id": 8
+    },
+    {
+      "idUser": 2,
+      "money": 5000,
+      "dateCreate": "2023-06-12T22:55:28.506Z",
+      "datePay": "2023-06-12T22:55:58.809Z",
+      "status": 1,
+      "id": 9
+    },
+    {
+      "idUser": 2,
+      "money": 2000,
+      "dateCreate": "2023-06-12T22:56:08.065Z",
+      "datePay": "2023-06-12T22:56:40.626Z",
+      "status": 1,
+      "id": 10
+    },
+    {
+      "idUser": 2,
+      "money": 2000,
+      "dateCreate": "2023-06-12T22:57:22.634Z",
+      "datePay": "2023-06-12T22:57:31.442Z",
+      "status": 1,
+      "id": 11
+    },
+    {
+      "idUser": 2,
+      "money": 1000,
+      "dateCreate": "2023-06-12T22:57:36.579Z",
+      "datePay": "2023-06-12T22:59:18.610Z",
+      "status": 1,
+      "id": 12
+    },
+    {
+      "idUser": 2,
+      "money": 1000,
+      "dateCreate": "2023-06-12T22:59:23.962Z",
+      "datePay": "2023-06-12T22:59:56.506Z",
+      "status": 1,
+      "id": 13
+    },
+    {
+      "idUser": 2,
+      "money": 1222,
+      "dateCreate": "2023-06-12T23:00:02.170Z",
+      "datePay": "2023-06-12T23:02:03.058Z",
+      "status": 1,
+      "id": 14
+    },
+    {
+      "idUser": 2,
+      "money": 2000,
+      "dateCreate": "2023-06-12T23:02:07.227Z",
+      "datePay": "2023-06-12T23:02:33.498Z",
+      "status": 1,
+      "id": 15
+    },
+    {
+      "idUser": 2,
+      "money": 1000,
+      "dateCreate": "2023-06-12T23:02:36.938Z",
+      "datePay": "2023-06-12T23:03:01.898Z",
+      "status": 1,
+      "id": 16
+    },
+    {
+      "idUser": 2,
+      "money": 1000,
+      "dateCreate": "2023-06-12T23:03:06.946Z",
+      "datePay": "2023-06-12T23:03:59.522Z",
+      "status": 1,
+      "id": 17
+    },
+    {
+      "idUser": 2,
+      "money": 1000,
+      "dateCreate": "2023-06-12T23:04:04.514Z",
+      "datePay": "2023-06-12T23:05:19.818Z",
+      "status": 1,
+      "id": 18
+    },
+    {
+      "idUser": 2,
+      "money": 1000,
+      "dateCreate": "2023-06-12T23:05:19.828Z",
+      "datePay": "2023-06-12T23:05:27.635Z",
+      "status": 1,
+      "id": 19
+    },
+    {
+      "idUser": 2,
+      "money": 12,
+      "dateCreate": "2023-06-12T23:05:27.645Z",
+      "datePay": "2023-06-12T23:05:33.050Z",
+      "status": 1,
+      "id": 20
+    },
+    {
+      "idUser": 2,
+      "money": 1222,
+      "dateCreate": "2023-06-12T23:05:33.060Z",
+      "datePay": "2023-06-12T23:07:05.402Z",
+      "status": 1,
+      "id": 21
+    },
+    {
+      "idUser": 2,
+      "money": 6155,
+      "dateCreate": "2023-06-12T23:07:05.413Z",
+      "datePay": "2023-06-12T23:07:22.219Z",
+      "status": 1,
+      "id": 22
+    },
+    {
+      "idUser": 2,
+      "money": 0,
+      "dateCreate": "2023-06-12T23:07:22.230Z",
+      "datePay": "2023-06-12T23:07:58.683Z",
+      "status": 1,
+      "id": 23
+    },
+    {
+      "idUser": 2,
+      "money": 7000,
+      "dateCreate": "2023-06-12T23:07:58.693Z",
+      "datePay": "2023-06-12T23:13:10.722Z",
+      "status": 1,
+      "id": 24
+    },
+    {
+      "idUser": 2,
+      "money": 0,
+      "dateCreate": "2023-06-12T23:13:10.734Z",
+      "datePay": "01/01/1990",
+      "status": 0,
+      "id": 25
+    },
+    {
+      "idUser": 1,
+      "money": 5111,
+      "dateCreate": "2023-06-13T07:35:34.289Z",
+      "datePay": "2023-06-19T21:47:35.699Z",
+      "status": 1,
+      "id": 26
+    },
+    {
+      "idUser": 4,
+      "money": 5000,
+      "dateCreate": "2023-06-13T08:01:17.068Z",
+      "datePay": "2023-06-13T08:01:46.670Z",
+      "status": 1,
+      "id": 27
+    },
+    {
+      "idUser": 4,
+      "money": 0,
+      "dateCreate": "2023-06-13T08:01:46.685Z",
+      "datePay": "01/01/1990",
+      "status": 0,
+      "id": 28
+    },
+    {
+      "idUser": 1,
+      "money": 0,
+      "dateCreate": "2023-06-19T21:47:35.715Z",
+      "datePay": "01/01/1990",
+      "status": 0,
+      "id": 29
+    }
+  ],
+  "billDetail": [
+    {
+      "idBill": 1,
+      "idProduct": 2,
+      "size": "M",
+      "quantity": 32,
+      "id": 1
+    },
+    {
+      "idBill": 1,
+      "idProduct": 2,
+      "size": "XL",
+      "quantity": 2,
+      "id": 2
+    },
+    {
+      "idBill": 2,
+      "idProduct": 1,
+      "size": "M",
+      "quantity": 5,
+      "id": 3
+    },
+    {
+      "idBill": 3,
+      "idProduct": 1,
+      "size": "M",
+      "quantity": 2,
+      "id": 4
+    },
+    {
+      "idBill": 3,
+      "idProduct": 1,
+      "size": "X",
+      "quantity": 3,
+      "id": 5
+    },
+    {
+      "idBill": 4,
+      "idProduct": 5,
+      "size": "M",
+      "quantity": 2,
+      "id": 6
+    },
+    {
+      "idBill": 5,
+      "idProduct": 1,
+      "size": "M",
+      "quantity": 2,
+      "id": 7
+    },
+    {
+      "idBill": 5,
+      "idProduct": 2,
+      "size": "XL",
+      "quantity": 8,
+      "id": 8
+    },
+    {
+      "idBill": 5,
+      "idProduct": 1,
+      "size": "X",
+      "quantity": 1,
+      "id": 9
+    },
+    {
+      "idBill": 2,
+      "idProduct": 1,
+      "size": "XL",
+      "quantity": 6,
+      "id": 10
+    },
+    {
+      "idBill": 2,
+      "idProduct": 6,
+      "size": "M",
+      "quantity": 6,
+      "id": 11
+    },
+    {
+      "idBill": 6,
+      "idProduct": 1,
+      "size": "X",
+      "quantity": 4,
+      "id": 12
+    },
+    {
+      "idBill": 7,
+      "idProduct": 2,
+      "size": "M",
+      "quantity": 2,
+      "id": 13
+    },
+    {
+      "idBill": 8,
+      "idProduct": 2,
+      "size": "M",
+      "quantity": 8,
+      "id": 14
+    },
+    {
+      "idBill": 9,
+      "idProduct": 1,
+      "size": "M",
+      "quantity": 5,
+      "id": 15
+    },
+    {
+      "idBill": 10,
+      "idProduct": 1,
+      "size": "M",
+      "quantity": 2,
+      "id": 16
+    },
+    {
+      "idBill": 11,
+      "idProduct": 5,
+      "size": "M",
+      "quantity": 2,
+      "id": 17
+    },
+    {
+      "idBill": 12,
+      "idProduct": 6,
+      "size": "M",
+      "quantity": 1,
+      "id": 18
+    },
+    {
+      "idBill": 13,
+      "idProduct": 6,
+      "size": "M",
+      "quantity": 1,
+      "id": 19
+    },
+    {
+      "idBill": 14,
+      "idProduct": 2,
+      "size": "M",
+      "quantity": 1,
+      "id": 20
+    },
+    {
+      "idBill": 15,
+      "idProduct": 5,
+      "size": "M",
+      "quantity": 2,
+      "id": 21
+    },
+    {
+      "idBill": 16,
+      "idProduct": 6,
+      "size": "M",
+      "quantity": 1,
+      "id": 22
+    },
+    {
+      "idBill": 17,
+      "idProduct": 6,
+      "size": "M",
+      "quantity": 1,
+      "id": 23
+    },
+    {
+      "idBill": 18,
+      "idProduct": 6,
+      "size": "M",
+      "quantity": 1,
+      "id": 24
+    },
+    {
+      "idBill": 19,
+      "idProduct": 4,
+      "size": "M",
+      "quantity": 1,
+      "id": 25
+    },
+    {
+      "idBill": 20,
+      "idProduct": 3,
+      "size": "M",
+      "quantity": 1,
+      "id": 26
+    },
+    {
+      "idBill": 21,
+      "idProduct": 2,
+      "size": "M",
+      "quantity": 1,
+      "id": 27
+    },
+    {
+      "idBill": 22,
+      "idProduct": 7,
+      "size": "M",
+      "quantity": 5,
+      "id": 28
+    },
+    {
+      "idBill": 23,
+      "idProduct": 3,
+      "size": "M",
+      "id": 29,
+      "quantity": null
+    },
+    {
+      "idBill": 24,
+      "idProduct": 5,
+      "size": "M",
+      "id": 30,
+      "quantity": 7
+    },
+    {
+      "idBill": 25,
+      "idProduct": 5,
+      "size": "M",
+      "quantity": 1,
+      "id": 31
+    },
+    {
+      "idBill": 4,
+      "idProduct": 5,
+      "size": "X",
+      "quantity": 1,
+      "id": 32
+    },
+    {
+      "idBill": 27,
+      "idProduct": 6,
+      "size": "M",
+      "quantity": 4,
+      "id": 33
+    },
+    {
+      "idBill": 27,
+      "idProduct": 6,
+      "size": "XL",
+      "quantity": 1,
+      "id": 34
+    },
+    {
+      "idBill": 26,
+      "idProduct": 10,
+      "size": "M",
+      "quantity": 1,
+      "id": 35
+    },
+    {
+      "idBill": 26,
+      "idProduct": 5,
+      "size": "M",
+      "quantity": 4,
+      "id": 36
+    },
+    {
+      "idBill": 26,
+      "idProduct": 5,
+      "size": "XL",
+      "quantity": 1,
+      "id": 37
+    },
+    {
+      "idBill": 29,
+      "idProduct": 1,
+      "size": "M",
+      "quantity": 1,
+      "id": 38
+    },
+    {
+      "idBill": 29,
+      "idProduct": 1,
+      "size": "X",
+      "quantity": 1,
+      "id": 39
+    }
+  ]
+}

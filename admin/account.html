@@ -1,0 +1,251 @@
+
+<body ng-app="myApp">
+  <div class="dashboard" ng-controller="accountController">
+    <div class="col-2">
+      <div class="dashboard_admin">
+        <div class="dashboard_admin-logo">
+          <img src="images/conbum.png" alt="" class="header_logo--img" />
+          <p>BB Cosplay</p>
+        </div>
+        <div class="dashboard_admin-menu">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#!/admin" class="nav-link"><i class="fa-brands fa-waze"></i> Dash Board</a>
+            </li>
+            <li class="nav-item">
+              <a href="#!/admin/account" class="nav-link"><i class="fa-regular fa-user"></i> Account</a>
+            </li>
+            <li class="nav-item">
+              <a href="#!/admin/product" class="nav-link"><i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                Products</a>
+            </li>
+            <li class="nav-item">
+              <a href="#!/admin/category" class="nav-link"><i class="fa-solid fa-person-dress"></i> Categories</a>
+            </li>
+            <li class="nav-item">
+              <a href="#!/admin/oder_details" class="nav-link"><i class="fa-solid fa-truck-fast"></i> Oder Details</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="box_dashboard">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled">Disabled</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="dashboard_account container">
+          <div class="btn_account-add">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addnewaccount">
+              Add
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="addnewaccount" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Thêm Mới Account
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="row g-3">
+                      <div class="col-12">
+                        <label for="name" class="form-label">Họ Và Tên</label>
+                        <input type="text" class="form-control" id="name" placeholder="Lại Văn Tèo"
+                          ng-model="form_addUser.name">
+                      </div>
+                      <div class="mb-3">
+                        <label for="gioitinh" class="form-label">Giới Tính</label><br>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="gioiTinh" id="gtNam1" value="true" ng-model="form_addUser.gender"  ng-checked="form_addUser.gender == true">
+                          <label class="form-check-label" for="gtNam1">Nam</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="gioiTinh" id="gtNu1" value="false" ng-model="form_addUser.gender" ng-checked="form_addUser.gender == false">
+                          <label class="form-check-label" for="gtNu1">Nữ</label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <label for="ngaysinh" class="form-label">Ngày Sinh</label>
+                        <input type="date" class="form-control" id="ngaysinh" ng-model="form_addUser.birthday">
+                      </div>
+                      <div class="col-12">
+                        <label for="avatar" class="form-label">Avatar</label>
+                        <input type="file" class="form-control" id="avatar" ng-model="form_addUser.avatar" onchange="getNameFile(event)" onclick="openFile()">
+                      </div>
+                      <div class="col-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="abc@abc.com"
+                          ng-model="form_addUser.email">
+                      </div>
+                      <div class="col-12">
+                        <label for="pass" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="pass" placeholder="123"
+                          ng-model="form_addUser.password">
+                      </div>
+
+                      <div class="col-12">
+                        <label for="inputCity" class="form-label">Địa Chỉ</label>
+                        <input type="text" class="form-control" id="inputCity" placeholder="Ma Cao"
+                          ng-model="form_addUser.address">
+                      </div>
+                    </form>
+
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" ng-click="addUser($event)">
+                      Add
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <table class="table table-info table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Họ Và Tên</th>
+                <th>Giới Tính</th>
+                <th>Email</th>
+                <th>Ngày Sinh</th>
+                <th>Avatar</th>
+                <th>Địa Chỉ</th>
+                <th>Vai trò</th>
+                <th colspan="2">Action</th>
+              </tr>
+            </thead>
+            <tbody class="">
+              <tr ng-repeat="user in listUsers">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.gender == "true"?"Nam":"Nữ"}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.birthday | date:'dd/MM/yyyy'}}</td>
+                <td> <img ng-src="images/user/{{user.avatar}}" alt="avararUser" style="width: 50px; height: 50px;">
+                </td>
+                <td>{{user.address}}</td>
+                <td>{{user.role == 0?"Admin":"Menber"}}</td>
+                <td>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateaccount" ng-click="detailUser($index)">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                  </button>
+                  <!-- update -->
+
+                  <div class="modal fade" id="updateaccount" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">
+                            Update Account
+                          </h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form class="row g-3">
+                            <div class="col-12">
+                              <label for="" class="form-label">Họ Và Tên</label>
+                              <input type="text" class="form-control" placeholder="Lại Văn Tèo"
+                                ng-model="form_updateUser.name">
+                            </div>
+                            <div class="mb-3">
+                              <label for="gioitinh" class="form-label">Giới Tính</label><br>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gioitinh" value="true" ng-model="form_updateUser.gender" ng-checked="form_updateUser.gender == 'true'">
+                                <label class="form-check-label" for="gtNam2">Nam</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gioitinh"  value="false" ng-model="form_updateUser.gender"  ng-checked="form_updateUser.gender == 'false'">
+                                <label class="form-check-label" for="gtNu2">Nữ</label>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <label for="" class="form-label">Ngày Sinh</label>
+                              <input type="date" class="form-control" ng-model="form_updateUser.birthday">
+                            </div>
+                            <div class="col-12">
+                              <label  class="form-label">Avatar</label>
+                              <input type="file" class="form-control" ng-model="form_addUser.avatar" onchange="getNameFile(event)">
+                            </div>
+                            <div class="col-12">
+                              <label for="" class="form-label">Email</label>
+                              <input type="email" class="form-control" placeholder="abc@abc.com"
+                                ng-model="form_updateUser.email">
+                            </div>
+                            <div class="col-12">
+                              <label for="" class="form-label">Password</label>
+                              <input type="password" class="form-control" placeholder="123"
+                                ng-model="form_updateUser.password">
+                            </div>
+
+                            <div class="col-12">
+                              <label for="" class="form-label">Địa Chỉ</label>
+                              <input type="text" class="form-control" placeholder="Ma Cao"
+                                ng-model="form_updateUser.address">
+                            </div>
+                          </form>
+
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary" ng-click="updateUser()">
+                            Update
+                          </button>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Close
+                          </button>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </td>
+                <td>
+                  <button class="btn btn-danger" ng-click="deleteUser($event, $index)">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

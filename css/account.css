@@ -1,0 +1,66 @@
+
+.box_tile{
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+.form_tile{
+    margin-bottom: 30px;
+}
+.form_account{
+    padding: 100px;
+    border-right: 1px solid #ccc;
+}
+.box_account{
+    animation: fadeIn ease-in 0.8s;
+
+}
+.box_login{
+   
+}
+.box_Login{
+    animation: fadeIn ease-in 0.8s;
+
+}
+.box_login button{
+    width: 100%;
+    margin: 10px 0;
+}
+.box_login-remember{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.box_register{
+    animation: fadeIn ease-in 0.8s;
+
+}
+.box_register button{
+    width: 100%;
+}
+
+.btn_account{
+    padding: 0 60px;
+    text-align: center;
+    margin-top: 100px;
+    /* display: flex;
+    align-items: center; */
+    /* flex-direction: column;  */
+}
+.btn_account-tile{
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+/* animation  */
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}

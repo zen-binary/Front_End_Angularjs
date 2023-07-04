@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg nav">
+    <div class="container">
+
+        <div class="navbar-brand"></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""><i class="fa-sharp fa-solid fa-bars"></i></span>
+          
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="#!/home">Trang Chủ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!/products">Sản Phẩm</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gioithieu.html">Giới Thiệu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Thể Loại</a>
+                
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Các Nước</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Trẻ Em</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Nhân Vật</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cổ Trang</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Phụ Kiện</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Đạo Cụ</a>
+              </li>
+          </ul>
+          
+        </div>
+    </div>
+  </nav>
+
+  <div class="slider" ng-hide="hideSlides">
+    <div id="slide" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./images/bbcosplay_anhbia_hanphuc.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <div class="carousel-box">
+              <a href="#" class="carousel-box-link">Hán Phục - Cơn Sốt Cổ Trang</a>
+              
+            </div>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./images/bbcosplay_anhbia_marvel.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <div class="carousel-box">
+              <a href="#" class="carousel-box-link">Biệt Đội Siêu Anh Hùng</a>
+              
+            </div>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./images/bbcosplay_anhbia_disney.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <div class="carousel-box">
+              <a href="#" class="carousel-box-link">Những nàng công chúa DISNEY</a>
+            </div>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#slide" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#slide" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  
+    <div class="content" ng-controller="productsController">
+
+        <div class="container">
+          <div class="boxx">
+            <div class="box-tile">
+              Sản Phẩm MỚi Nhất
+            </div>
+            <hr>
+            <div class="box_item row">
+              <div class="box_sp col-lg-2 col-md-2 col-sm-4 col-xs-6" ng-repeat="product in listProducts | orderBy:'-dateCreate' | limitTo:6 ">
+                <a ng-href="#!/products/{{product.id}}">
+                  <div class="box_sp-img">
+                    <img ng-src="images/sp/{{product.img[0]}}" alt="" style="height: 300px;">
+                  </div>
+                  <div class="box_sp-id">Mã: {{product.id}}</div>
+                  <h5 class="box_sp-tile">
+                    {{product.name}}
+                  </h5>
+                  
+                  <div class="box_sp-sell">
+                    <div  class="box_sp-gia">Giá: {{product.price}} <span class="text-decoration-underline">đ</span></div> 
+                      <div class="box_sp-banduoc">Đã bán: {{product.sold}}</div>
+                  </div>
+                  <div class="box_new">
+                    <img src="images/new-post.gif" alt="">
+                  </div>
+                
+                </a>
+              </div>
+
+            </div>
+
+            
+
+
+          </div>
+
+          <div class="boxx">
+
+            <div class="box-tile">
+              Sản Phẩm Bán Chạy Nhất
+            </div>
+            <hr>
+            <div class="box_item row">
+              <div class="box_sp col-lg-2 col-md-2 col-sm-4 col-xs-6" ng-repeat="product in listProducts | orderBy:'-sold' | limitTo:6">
+                <a ng-href="#!/products/{{product.id}}">
+                  <div class="box_sp-img">
+                    <img ng-src="images/sp/{{product.img[0]}}" alt="" style="height: 300px;">
+                  </div>
+                  <div class="box_sp-id">Mã: {{product.id}}</div>
+                  <h5 class="box_sp-tile">
+                    {{product.name}}
+                  </h5>
+                  
+                  <div class="box_sp-sell">
+                    <div  class="box_sp-gia">Giá: {{product.price}} <span class="text-decoration-underline">đ</span></div> 
+                      <div class="box_sp-banduoc">Đã bán: {{product.sold}}</div>
+                  </div>         
+                </a>
+              </div>
+
+            </div>
+
+            
+
+
+          </div>
+            
+
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer_box1">
+          <div class="container">
+            <div class="row">
+              <div class="footer_box col-md-6">
+                <div class="footer_box-logo">
+                      <img src="images/conbum.png" alt="">
+                      <b>BB</b>Cosplay
+                </div>
+                <div class="footer_box-tile1">
+                  Chuyên bán và cho thuê trang phục hoá trang - biểu diễn
+                </div>
+                <div class="footer_box-tile2 row">
+                  <div class="col-md-4"><p>5,478</p> Sản phẩm</div>
+                  <div class="col-md-4"><p>2,521</p> Khách hàng</div>
+                  <div class="col-md-4"><p>100</p> Nhà cung cấp</div>
+                </div>
+                <div class="footer_box-icon">
+                  <div class="icon">
+                    <i class="fa-brands fa-square-facebook"></i>
+                  </div>
+                  <div class="icon">
+                    <i class="fa-brands fa-youtube"></i>
+                  </div>
+                  <div class="icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </div>
+                  <div class="icon">
+                    <i class="fa-brands fa-square-pinterest"></i>
+                  </div>
+                  <div class="icon">
+                    <i class="fa-brands fa-square-twitter"></i>
+                  </div>
+                  
+                </div>
+
+              </div>
+              <div class="footer_box col-md-3">
+                <div>Categories</div>
+                <ul>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Giới thiệu</a></li>
+                  <li><a href="#">Quy Định Thuê</a></li>
+                  <li><a href="#">Quy định đổi trả</a></li>
+                  <li><a href="#">Chính sách riêng tư</a></li>
+                  <li><a href="#">Liên hệ</a></li>
+                </ul>
+              </div>
+
+              <div class="footer_box col-md-3">
+                <div>Categories</div>
+                <ul>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Giới thiệu</a></li>
+                  <li><a href="#">Quy Định Thuê</a></li>
+                  <li><a href="#">Quy định đổi trả</a></li>
+                  <li><a href="#">Chính sách riêng tư</a></li>
+                  <li><a href="#">Liên hệ</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="footer_box2">
+          <div class="container">
+            <div class="row">
+              <div class="footer_box col-md-3">
+                  <div class="footer_box-diachi">
+                    <h5><i class="fa-solid fa-location-dot"></i> Địa chỉ</h5>
+                    <p>118/19 Bạch Đằng, P.24, Q. Bình Thạnh, TP.HCM</p>
+                  </div>
+                  <div class="footer_box-hotline">
+                      <h5> Hotline/zalo:</h5>
+                      <p>0947.927.017</p>
+                  </div>
+              </div>
+
+              <div class="footer_box col-md-2">
+                <div class="footer_box-time">
+                  <h5><i class="fa-regular fa-clock"></i> Giờ làm việc</h5>
+                  <p>Thứ 2 - Thứ 7: 8:30 - 20:00</p>
+                  <p>Chủ Nhật: 10:00 - 18:00</p>
+                  <p>Lễ + Tết: nghỉ</p>
+                </div>
+              </div>
+
+              <div class="footer_box col-md-4">
+                <div class="footer_box-map">
+                  <h5><i class="fa-solid fa-map-location-dot"></i> Hướng dẫn đường đi</h5>
+                  <p>Nếu đi từ Hàng Xanh (Bạch Đằng), qua ngã tư Bạch Đằng - Đinh Bộ Lĩnh 100m gặp hẻm 118. Vào hẻm gặp đường cắt ngang đầu tiên (ngã tư) rẻ trái -> tìm số nhà bên trái 118/19 (cổng màu hồng).</p>
+                  <p>Hẻm 118 là hẻm xe hơi. Đi xe hơi, có thể đậu đầu hẻm, cần một người ở lại trông xe. Đi xe máy, chạy vào bình thường.</p>
+                  <p>Nếu đi hướng Tân Bình, Phú Nhuận, Chợ Bà Chiểu. Chạy thẳng Bạch Đằng, gặp ngã tư Bặch Đằng - Đinh Bộ Lĩnh , vòng lại (hình chữ U), đi tiếp 200m, tìm hẻm 118</p>
+
+                </div>
+              </div>
+
+              <div class="footer_box col-md-3">
+                <div class="footer_box-bank">
+
+                  <h5><i class="fa-solid fa-building-columns"></i> Tài khoản ngân hàng:</h5>
+                  <p>Chủ tài khoản:</p>
+                  <p>Quý khách chuyển nhanh (Napas 24/7) để tiền đi nhanh, có tên người nhận, và không cần chọn chi nhánh ngân hàng</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    
+</body>
+</html>
